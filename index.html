@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MST-2 Preparation Plan | 15 Days</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--text:#172033;--muted:#64748b;--line:#dbe3ef;--accent:#3157d5;--soft:#eaf0ff;--green:#16805d;--shadow:0 8px 24px rgba(22,34,66,.07)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+header{background:linear-gradient(125deg,#172554,#3157d5);color:white;padding:36px 20px}
+.hero{max-width:1100px;margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;opacity:.8;font-weight:bold}
+h1{margin:.35rem 0;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15}
+header p{margin:.6rem 0 0;color:#e4eaff}
+main{max-width:1100px;margin:24px auto;padding:0 16px 48px}
+.notice{background:#fff8e6;border:1px solid #f2d58b;border-radius:12px;padding:13px 16px;margin-bottom:20px}
+.section-title{font-size:1.4rem;margin:28px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:17px;box-shadow:var(--shadow)}
+.routine .time{font-weight:bold;color:var(--accent);font-size:1.05rem}
+.routine h3{margin:6px 0}
+.muted{color:var(--muted);font-size:.94rem}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}
+button,select{font:inherit;border:1px solid var(--line);border-radius:9px;padding:9px 12px;background:#fff;color:var(--text);cursor:pointer}
+button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:hover{filter:brightness(.97)}
+.progress-wrap{background:#e2e8f0;height:9px;border-radius:99px;overflow:hidden;margin:10px 0}
+#progressBar{height:100%;width:0;background:var(--green);transition:width .2s}
+.progress-row{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.9rem}
+.day-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(58px,1fr));gap:7px}
+.day-btn{padding:10px 5px;text-align:center}
+.day-btn.active{background:var(--soft);border-color:var(--accent);color:var(--accent);font-weight:bold}
+.day-panel{margin-top:14px}
+.day-panel h3{margin:0 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#2444ae;border-radius:99px;padding:4px 10px;font-size:.84rem;font-weight:bold;margin:0 0 10px}
+.day-panel ul{padding-left:22px}
+.practice{background:#f0fdf4;border-left:4px solid #16a34a;padding:12px 14px;border-radius:8px;margin-top:12px}
+.subject-block{margin:12px 0}
+.subject-block h3{margin:0 0 9px;font-size:1.08rem}
+.checklist{display:grid;gap:8px}
+.check-item{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;background:#f8fafc;border:1px solid #e7edf5;border-radius:9px}
+.check-item input{margin-top:5px;accent-color:var(--green);transform:scale(1.1)}
+.check-item label{cursor:pointer;flex:1}
+footer{max-width:1100px;margin:0 auto;padding:0 16px 28px;color:var(--muted);font-size:.9rem}
+@media print{body{background:#fff}header{background:#fff;color:#111;padding:15px 0;border-bottom:2px solid #222}header p{color:#333}main{margin:0 auto}.card{box-shadow:none;break-inside:avoid}.controls, .day-grid, .notice button{display:none}.day-panel{display:block!important}.check-item{break-inside:avoid}button,select{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hero">
+    <div class="eyebrow">B.Tech CSE • Semester 3</div>
+    <h1>MST-2 Preparation Plan</h1>
+    <p>15-day study planner • Unit 3 and Unit 4 only • Based on your uploaded semester syllabus PDF</p>
+  </div>
+</header>
+<main>
+  <div class="notice"><strong>Scope:</strong> This planner focuses only on Units 3 and 4. The exact MST-2 coverage and exam pattern should be confirmed with your faculty.</div>
+
+  <h2 class="section-title">1. Daily Study Routine (5 Hours)</h2>
+  <div class="grid">
+    <article class="card routine"><div class="time">90 minutes</div><h3>Subject 1 — Concepts</h3><div class="muted">Theory, definitions, diagrams and numerical problems.</div></article>
+    <article class="card routine"><div class="time">90 minutes</div><h3>Subject 2 — Practice</h3><div class="muted">C programs, Python programs, SQL queries or mathematical problems.</div></article>
+    <article class="card routine"><div class="time">60 minutes</div><h3>Subject 3 — Revision</h3><div class="muted">Short notes, important questions and recall without looking at notes.</div></article>
+    <article class="card routine"><div class="time">60 minutes</div><h3>Self-test</h3><div class="muted">Write answers, solve questions and identify weak topics.</div></article>
+  </div>
+
+  <h2 class="section-title">2. Complete 15-Day Timetable</h2>
+  <p class="muted">Select a day to view its topics and practice target.</p>
+  <div class="day-grid" id="dayGrid" aria-label="Select study day"></div>
+  <section class="card day-panel" id="dayPanel" aria-live="polite"></section>
+
+  <h2 class="section-title">3. Subject-wise Syllabus Checklist</h2>
+  <p class="muted">Tick each topic as you complete it. Progress is saved in this browser on this device.</p>
+  <div class="controls">
+    <label for="subjectFilter"><strong>Filter subject:</strong></label>
+    <select id="subjectFilter">
+      <option value="All">All subjects</option><option value="COA">COA</option><option value="DSA">DSA</option>
+      <option value="DBMS">DBMS</option><option value="Discrete Mathematics">Discrete Mathematics</option>
+      <option value="EVS">Environmental Studies</option><option value="Python">Python Programming</option>
+    </select>
+    <button id="resetChecks" type="button">Reset checklist</button>
+    <button id="printBtn" type="button">Print / Save as PDF</button>
+  </div>
+  <div class="progress-row"><span id="progressText">0 topics completed</span><span id="progressPercent">0%</span></div>
+  <div class="progress-wrap"><div id="progressBar"></div></div>
+  <div id="checklist"></div>
+
+  <h2 class="section-title">4. Preparation Strategy</h2>
+  <div class="grid">
+    <article class="card"><h3>Theory subjects</h3><p>Prepare definitions, classifications, differences, diagrams and examples. Practise writing 5-mark and 10-mark answers.</p></article>
+    <article class="card"><h3>DSA and COA</h3><p>Practise algorithms, step-by-step dry runs, diagrams and time complexities wherever applicable.</p></article>
+    <article class="card"><h3>DBMS</h3><p>Write SQL queries yourself and practise transaction schedules and precedence graphs.</p></article>
+    <article class="card"><h3>Discrete Mathematics</h3><p>Solve problems on relations, Hasse diagrams, permutations, combinations and recurrence relations.</p></article>
+    <article class="card"><h3>Python</h3><p>Write and execute programs rather than only reading them.</p></article>
+    <article class="card"><h3>EVS</h3><p>Prepare concise answers with causes, impacts, examples and solutions.</p></article>
+  </div>
+</main>
+<footer>Made for personal study planning. Topic lists are based on the uploaded syllabus extraction; check the official class instructions for confirmed MST-2 coverage.</footer>
+<script>
+const days = [
+{d:1,focus:"Unit 3 — Foundations",subjects:"COA + DSA",tasks:["COA: Hardware implementation of addition/subtraction, multiplication algorithms.","DSA: Searching concepts, efficiency analysis and linear search."],practice:"Solve binary/arithmetic examples and write linear search in C."},
+{d:2,focus:"Unit 3 — Algorithms",subjects:"DSA + Python",tasks:["DSA: Binary search, hashing, collision resolution, insertion sort and selection sort.","Python: Built-in functions, type conversion and math module."],practice:"Binary search and sorting traces; Python built-in function examples."},
+{d:3,focus:"Unit 3 — Numerical practice",subjects:"COA + Discrete Mathematics",tasks:["COA: Booth's multiplier, array multiplier and division algorithms.","Discrete Mathematics: Binary relations, types of relations and equivalence relations."],practice:"Practice Booth's algorithm and relation-based questions."},
+{d:4,focus:"Unit 3 — Advanced topics",subjects:"DSA + Python",tasks:["DSA: Quick sort, heap sort, merge sort, radix sort and shell sort.","Python: User-defined functions, parameters and business applications."],practice:"Write sorting programs; practise Python functions with examples."},
+{d:5,focus:"Unit 3 — Completion",subjects:"DBMS + EVS + COA",tasks:["DBMS: CREATE, DROP, INSERT, SELECT, GROUP BY, HAVING, aggregate functions and joins.","EVS: Climate change, global warming, acid rain and natural disasters.","COA: Floating-point representation and arithmetic."],practice:"Write SQL queries; prepare EVS short notes; solve COA examples."},
+{d:6,focus:"Unit 3 — Completion and test",subjects:"Discrete Mathematics + Python + DSA",tasks:["Discrete Mathematics: Equivalence classes, partitions, partial ordering, Hasse diagrams, lattices and Boolean algebra.","Python: Financial statement analysis, goodwill and share valuation topics listed in the syllabus.","DSA: Revise hashing and sorting."],practice:"Draw Hasse diagrams, solve Boolean algebra questions and practise Python calculations."},
+{d:7,focus:"Unit 4 — Memory and trees",subjects:"COA + DSA",tasks:["COA: Memory hierarchy, RAM, ROM chips, memory address map and memory connection.","DSA: Tree definitions, properties, array/linked representation and types of binary trees."],practice:"Draw memory hierarchy and tree diagrams; practise binary tree representations."},
+{d:8,focus:"Unit 4 — Core concepts",subjects:"DBMS + Discrete Mathematics",tasks:["DBMS: Transactions, ACID properties, schedules, conflict/view serializability and precedence graphs.","Discrete Mathematics: Counting principles, addition/multiplication rules, permutations and combinations."],practice:"Solve serializability questions and counting problems."},
+{d:9,focus:"Unit 4 — Applications",subjects:"COA + Python",tasks:["COA: Associative memory, cache memory, paging, segmentation and auxiliary memory.","Python: while/for loops, file operations, reading, searching and writing text files."],practice:"Practise memory-related diagrams and Python file-handling programs."},
+{d:10,focus:"Unit 4 — Advanced concepts",subjects:"DSA + DBMS",tasks:["DSA: Tree traversals, BST insertion/deletion/searching, Huffman coding, AVL trees and rotations.","DBMS: Two-phase locking, timestamp ordering, deadlocks, logging and recovery."],practice:"Construct BSTs and perform traversals; solve transaction and locking examples."},
+{d:11,focus:"Unit 4 — Remaining syllabus",subjects:"Discrete Mathematics + EVS",tasks:["Discrete Mathematics: Binomial theorem, Pascal's identity, pigeonhole principle, inclusion-exclusion, recurrence relations and generating functions.","EVS: Environmental ethics, Indian religions/cultures, public awareness, conservation and environmental movements."],practice:"Solve combinatorics and recurrence problems; prepare EVS 5-mark answers."},
+{d:12,focus:"Unit 4 — Finish and practise",subjects:"COA + DSA + Python",tasks:["COA: Magnetic disks/tapes, asynchronous transfer, modes of transfer, priority interrupts, DMA and IOP.","DSA: B-trees and binary heaps.","Python: Lists, slicing, dictionaries, tuples and related operations."],practice:"Draw I/O transfer diagrams; practise heap operations and Python data structures."},
+{d:13,focus:"Revision Round 1",subjects:"COA + DSA + DBMS",tasks:["Revise Unit 3 and Unit 4 definitions, diagrams, algorithms, complexity, tree operations, SQL syntax and transaction concepts."],practice:"Attempt a timed mixed mock test; rewrite incorrect answers."},
+{d:14,focus:"Revision Round 2",subjects:"Discrete Mathematics + EVS + Python",tasks:["Revise formulas, relations, Hasse diagrams, counting, environmental case studies, functions, loops, files and data structures."],practice:"Solve DM numericals; write Python programs; practise EVS long answers."},
+{d:15,focus:"Final mock test",subjects:"All six subjects",tasks:["Attempt short questions, long questions, numerical problems, SQL queries, C programs and Python programs from Units 3 and 4 only."],practice:"Check mistakes, revise weak topics and review one-page notes. Avoid starting new chapters."}
+];
+const groups = [
+{subject:"COA",unit:"Unit 3",items:["Hardware implementation of addition and subtraction","Multiplication algorithms, Booth's multiplier and array multiplier","Division algorithms","Floating-point representation","Floating-point addition, subtraction, multiplication and division"]},
+{subject:"COA",unit:"Unit 4",items:["Memory hierarchy, RAM and ROM chips","Memory address map and memory connection","Associative memory and cache memory","Paging, segmentation and auxiliary memory","Magnetic disks and magnetic tapes","Asynchronous data transfer and modes of transfer","Priority interrupt, DMA and IOP"]},
+{subject:"DSA",unit:"Unit 3",items:["Searching concepts and efficiency analysis","Linear and binary search","Hashing and collision resolution","Insertion, selection, quick, heap and merge sort","Radix sort and shell sort"]},
+{subject:"DSA",unit:"Unit 4",items:["Tree definition, properties and representations","Binary tree types","Inorder, preorder and postorder traversal","BST insertion, deletion, searching and updation","Huffman coding","Balanced trees, AVL operations and rotations","B-tree and binary heaps"]},
+{subject:"DBMS",unit:"Unit 3",items:["SQL DDL: CREATE and DROP","SQL DML: INSERT","SELECT, GROUP BY, HAVING and aggregate functions","Inner and outer joins","Nested and correlated subqueries","Views and constraints","Triggers and stored procedures","Indexing commands and transaction basics"]},
+{subject:"DBMS",unit:"Unit 4",items:["Transactions and ACID properties","Schedules and types of schedules","Conflict and view serializability","Precedence graphs and correctness criteria","Two-phase locking and strict 2PL","Timestamp ordering and deadlocks","Logging, checkpointing and crash recovery","Distributed transactions and two-phase commit"]},
+{subject:"Discrete Mathematics",unit:"Unit 3",items:["Binary relations and types of relations","Equivalence relations and equivalence classes","Partitions and partial ordering","Hasse diagrams and lattices","Boolean algebra and applications in digital logic"]},
+{subject:"Discrete Mathematics",unit:"Unit 4",items:["Basic counting principles","Addition and multiplication rules","Permutations and combinations","Binomial theorem and Pascal's identity","Pigeonhole principle","Inclusion-exclusion principle","Recurrence relations and generating functions","Applications in algorithm analysis"]},
+{subject:"EVS",unit:"Unit 3",items:["Climate change and global warming","Acid rain and natural disasters","Global climate change projections","Impacts, vulnerability and adaptation","Climate change mitigation, National Climate Action Plan and INDCs","AI algorithms for climate prediction, climate sensors and global warming simulations"]},
+{subject:"EVS",unit:"Unit 4",items:["Environmental ethics and ecological wisdom","Indian religions and cultures in conservation","Environmental communication and public awareness","CNG vehicles in Delhi case study","Energy and water conservation; sustainable consumerism","Chipko, Silent Valley and Bishnoi movements","Resettlement and rehabilitation"]},
+{subject:"Python",unit:"Unit 3",items:["Built-in functions, type conversion and math module","User-defined functions and parameters","Business applications using functions","Financial statement analysis, goodwill and share valuation"]},
+{subject:"Python",unit:"Unit 4",items:["while and for loops; updating variables","File operations: open, read, search and write","Lists: traversal, operations and slicing","Dictionaries and operations with files","Tuples: immutability, comparison and looping"]}
+];
+const dayGrid=document.getElementById("dayGrid");
+const dayPanel=document.getElementById("dayPanel");
+days.forEach(day=>{
+ const b=document.createElement("button"); b.type="button"; b.className="day-btn"; b.textContent=day.d; b.setAttribute("aria-label","Day "+day.d);
+ b.addEventListener("click",()=>showDay(day.d)); b.id="day-"+day.d; dayGrid.appendChild(b);
+});
+function showDay(n){
+ const d=days.find(x=>x.d===n);
+ document.querySelectorAll(".day-btn").forEach(b=>b.classList.toggle("active",b.id==="day-"+n));
+ dayPanel.innerHTML=`<h3>Day ${d.d}: ${d.focus}</h3><span class="pill">${d.subjects}</span><h4>Topics to study</h4><ul>${d.tasks.map(t=>`<li>${escapeHtml(t)}</li>`).join("")}</ul><div class="practice"><strong>Practice target</strong><br>${escapeHtml(d.practice)}</div>`;
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+showDay(1);
+const checklist=document.getElementById("checklist");
+const filter=document.getElementById("subjectFilter");
+const STORE="mst2-15day-checklist-v1";
+let completed={};
+try{completed=JSON.parse(localStorage.getItem(STORE)||"{}")||{};}catch(e){completed={};}
+function renderChecklist(){
+ checklist.innerHTML="";
+ const selected=filter.value;
+ groups.filter(g=>selected==="All"||g.subject===selected).forEach((g,gi)=>{
+  const block=document.createElement("section");block.className="card subject-block";
+  const title=document.createElement("h3");title.textContent=`${g.subject} — ${g.unit}`;block.appendChild(title);
+  const list=document.createElement("div");list.className="checklist";
+  g.items.forEach((item,i)=>{
+   const id=`${g.subject}|${g.unit}|${item}`;
+   const row=document.createElement("div");row.className="check-item";
+   const input=document.createElement("input");input.type="checkbox";input.id="topic-"+gi+"-"+i;input.checked=!!completed[id];
+   input.addEventListener("change",()=>{completed[id]=input.checked;save();updateProgress();});
+   const label=document.createElement("label");label.htmlFor=input.id;label.textContent=item;
+   row.append(input,label);list.appendChild(row);
+  });
+  block.appendChild(list);checklist.appendChild(block);
+ });
+}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(completed));}catch(e){}}
+function updateProgress(){
+ const total=groups.reduce((n,g)=>n+g.items.length,0);
+ const done=Object.values(completed).filter(Boolean).length;
+ const pct=Math.round(done/total*100);
+ document.getElementById("progressText").textContent=`${done} of ${total} topics completed`;
+ document.getElementById("progressPercent").textContent=pct+"%";
+ document.getElementById("progressBar").style.width=pct+"%";
+}
+filter.addEventListener("change",renderChecklist);
+document.getElementById("resetChecks").addEventListener("click",()=>{
+ if(confirm("Reset all checklist progress?")){completed={};save();renderChecklist();updateProgress();}
+});
+document.getElementById("printBtn").addEventListener("click",()=>window.print());
+renderChecklist();updateProgress();
+</script>
+</body>
+</html>
